@@ -29,11 +29,15 @@ provider "random" "this" {}
 
 component "vpc" {
 
-  source = "./vpc"
+  source  = "joatmon08/hello/random"
+  version = "6.0.0"
 
   inputs = {
-    account_id = var.account_id
-    region = var.region
+    hellos = {
+      hello        = "vpc-${var.region}"
+      second_hello = "subnet-${var.account_id}"
+    }
+    some_key = "network-stack"
   }
 
   providers = {
@@ -42,16 +46,16 @@ component "vpc" {
 }
 
 output "vpc_id" {
-  value = component.vpc.vpc_id.id
+  value = component.vpc.pet
   type = string
 }
 
 output "subnet_private_id" {
-  value = component.vpc.subnet_private_id.id
+  value = component.vpc.pet
   type = string
 }
 
 output "subnet_public_id" {
-  value = component.vpc.subnet_public_id.id
+  value = component.vpc.pet
   type = string
 }

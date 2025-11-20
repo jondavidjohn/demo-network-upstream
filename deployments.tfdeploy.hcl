@@ -30,9 +30,9 @@ publish_output "vpc_id_prod" {
 }
 
 publish_output "subnet_private_id_prod" {
-  value = "asdfasdf"
+  value = deployment.prod.subnet_private_id
 }
 
 publish_output "subnet_public_id_prod" {
-  value = "qweasdkjfhnewcontent!jladskjfrqwer"
+  value = deployment.prod.subnet_public_id
 }
