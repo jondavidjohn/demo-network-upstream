@@ -8,7 +8,7 @@ deployment "staging" {
 
 deployment "prod" {
   inputs = {
-    account_id = "21091"
+    account_id = "21094"
     region     = "us-east-1"
   }
 }
