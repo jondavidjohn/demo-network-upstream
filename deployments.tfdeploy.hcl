@@ -5,14 +5,6 @@ deployment "staging" {
   }
 }
 
-deployment "prod" {
-  destroy = true
-  inputs = {
-    account_id = "21098"
-    region     = "us-east-1"
-  }
-}
-
 # Publish outputs for downstream stacks
 publish_output "vpc_id_staging" {
   value = deployment.staging.vpc_id
